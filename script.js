@@ -194,3 +194,97 @@ string '' -> 0
 string 'hola' -> NaN
 
 */
+
+// SENTENCIA IF
+
+/*
+if(condicion){
+
+}else if(condicion){
+
+}else{
+
+}
+*/
+
+// if de línea
+if(4 > 5) console.log('Mensaje');
+
+if(4 > 5){
+    b = 5+ 3;
+    console.log('Mensaje');
+}
+if(1){
+    console.log('Mensaje');
+}
+if('az'>5){
+    console.log('Mansaje');
+}
+
+// Operador Ternario
+let edad
+let resultado = edad > 18 ? 20 : 30; 
+
+/// BUCLES WHILE Y FOR
+
+/* While(condición){
+
+}*/
+
+let i = 1;
+while(i<=10){
+    console.log(`El valor de i es: ${i}`);
+    i++;
+}
+
+// do - while
+
+/*
+do {
+
+}while(condición);
+*/
+console.log('****************');
+i = 1;
+do{
+console.log(`El valor de i es ${i}`);
+i++;
+}while(i<= 10);
+
+// Ciclo for
+
+/*
+    for(comienzo; condición; incremento){
+
+    }
+*/
+
+console.log('****************');
+for(i=0; i<= 10; i++){
+
+console.log(`El valor de i es ${i}`);
+}
+
+// Switch
+
+/*
+switch(valor):{
+    case valor1:
+        [break];
+    default:
+        [break];
+}
+*/
+
+a = 2 + 2;
+switch(a){
+    case 3:
+        console.log('El resultado es 3');
+        break;
+    case 4:
+        console.log('El resultado es 4');
+        break;
+    default:
+        console.log('Ninguno de los dos valores');
+    
+}
