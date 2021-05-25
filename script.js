@@ -288,3 +288,156 @@ switch(a){
         console.log('Ninguno de los dos valores');
     
 }
+
+// FUNCIONES
+
+/*
+function nombre([parámetros]){
+
+}
+*/
+
+function saludar(){
+    console.log('Hola Mundo');
+}
+
+saludar();
+
+// Variable local
+
+function saludar_nombre(){
+    let nombre_xx = 'Roberto';
+    console.log(`Hola ${nombre_xx}`);
+}
+//console.log(`Hola ${nombre_xx}`);
+
+// Variable externa
+
+let nombre_xxx = 'Roberto';
+function saludar_nombre(){
+   
+    console.log(`Hola ${nombre_xxx}`);
+}
+console.log(`Hola ${nombre_xxx}`);
+
+// Parámetros
+console.log('****************')
+function mensaje_(de, texto){
+    console.log(`${de}: ${texto}`);
+}
+
+mensaje_('Roberto','Hola María');
+mensaje_('María','Hola Roberto');
+
+// Valores predeterminados
+
+function mensaje_2(de, texto=''){
+    console.log(`${de}: ${texto}`);
+}
+
+mensaje_2('Roberto');
+mensaje_2('María','Hola Roberto');
+
+// Retorno en JavaScript
+
+function sumar(a, b){
+    return a + b;
+}
+
+function sumar_dos(a, b){
+    return null;
+}
+
+console.log(sumar(4, 5));
+console.log(sumar(4.5,5.6));
+console.log(sumar_dos(4, 5));
+
+
+// HUF que devuelva l asumatoria de los números pares del 1 al x
+function sumatoria_pares(x){
+    sumatoria = 0;
+    for(i=0; i<=x; i++){
+        if(i%2 == 0) sumatoria = sumatoria + i;
+    }
+    return sumatoria;
+}
+
+// Forma buenas prácticas
+
+function sumatoria_pares_dos(x){
+    sumatoria = 0;
+    for(i=0; i<=x; i++){
+        if(es_par(i)){
+            sumatoria = sumatoria + i;
+        }
+    }
+    return sumatoria;
+}
+
+function es_par(x){
+    return x % 2 == 0;
+}
+
+console.log('Método dos:',sumatoria_pares_dos(10));
+
+
+// Expresión y Declaración de una función
+
+// Declarar una función
+
+function hola_(){
+    return 'Hola Mundo';
+}
+console.log(hola_());
+console.log(hola_);
+let aux = hola_;
+console.log('Invoco auxiliar:',aux());
+
+// Expresión de una función
+
+let hola_dos = function(){
+    return 'Hola Mundo dos';
+}
+
+console.log(hola_dos);
+aux = hola_dos;
+console.log('Invoco auxiliar:',hola_dos());
+
+// Funciones Flecha
+
+let hola_tres = function(){
+    console.log ('Hola Mundo tres');
+}
+
+let hola_tres_retorno = function(){
+    return 'Hola Mundo tres';
+}
+
+hola_tres_retorno = () => {
+    return ('Hola Mundo tres'); 
+}
+
+
+// Callback
+
+function decidir(pregunta, si, no){
+    if(confirm(pregunta)){
+        si();
+    }else{
+        no();
+    }
+}
+
+let si = () => alert('La persona dijo que si !!!');
+let no = () => alert('La persona dijo que no');
+
+// decidir('¿Estás interesado en aprender JavaScript?', si, no);
+
+
+// Creación de funciones dinámicas
+
+let saludar_edad = (edad > 18) ?
+    () => console.log('Es Mayor de edad'):
+    () => console.log('Es Menor de edad');
+
+saludar_edad();
